@@ -19,7 +19,8 @@ schema.methods.generateJWT = function generateJWT(){
 };
 
 schema.methods.isValidPassword = function isValidPassword(password){
-	return bcrypt.compareSync(password,this.passwordHash);
+	//return bcrypt.compareSync(password,this.passwordHash);
+	return password===this.passwordHash;
 };
 
 schema.methods.toAuthJSON = function toAuthJSON(){
