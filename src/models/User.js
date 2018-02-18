@@ -5,7 +5,11 @@ import jwt from 'jsonwebtoken';
 const schema = new mongoose.Schema(
 	{
 		email:{type:String,required:true,lowercase:true},
-		passwordHash:{type:String,required:true}
+		passwordHash:{type:String,required:true},
+		role:{
+			roleId:{type:Number,required:true},
+			roleName:{type:String,required:true}
+		}
 	},
 	{
 		timestamps:true
@@ -26,7 +30,8 @@ schema.methods.isValidPassword = function isValidPassword(password){
 schema.methods.toAuthJSON = function toAuthJSON(){
 	return {
 		email: this.email,
-		token: this.generateJWT()
+		token: this.generateJWT(),
+		role:  this.role
 	}
 };
 
