@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import auth from "./routes/auth";
 import initrent from "./routes/getinit";
 import saverecords from "./routes/saverecords";
+import tenantlist from "./routes/tenantlist";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import Promise from "bluebird"; 
@@ -24,6 +25,7 @@ app.use(function(req,res,next){
 app.use('/api/auth',auth);
 app.use('/initRent',initrent);
 app.use('/saveRecords',saverecords);
+app.use('/initTenant',tenantlist);
 
 
 app.get('/*',(req,res)=>{
