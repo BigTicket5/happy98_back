@@ -5,6 +5,7 @@ import auth from "./routes/auth";
 import initrent from "./routes/getinit";
 import saverecords from "./routes/saverecords";
 import tenantlist from "./routes/tenantlist";
+import savetenant from "./routes/savetenant";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import Promise from "bluebird"; 
@@ -26,6 +27,7 @@ app.use('/api/auth',auth);
 app.use('/initRent',initrent);
 app.use('/saveRecords',saverecords);
 app.use('/initTenant',tenantlist);
+app.use('/saveTenant',savetenant);
 
 
 app.get('/*',(req,res)=>{
