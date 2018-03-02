@@ -4,7 +4,7 @@ const router =  express.Router();
 router.post("/",(req,res)=>{
 	var newTenant = req.body.tenant;
 	//update function has some problem here need to check
-	TenantInit.updateOne(newTenant,function(err,newTenant){
+	TenantInit.update(newTenant,function(err,newTenant){
 		if(err){
 			res.status(400).json({errors:{global:"Invalid credentials"}});
 		}
