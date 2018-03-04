@@ -6,6 +6,7 @@ import initrent from "./routes/getinit";
 import saverecords from "./routes/saverecords";
 import tenantlist from "./routes/tenantlist";
 import savetenant from "./routes/savetenant";
+import initprop from "./routes/initprop";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import Promise from "bluebird"; 
@@ -28,6 +29,7 @@ app.use('/initRent',initrent);
 app.use('/saveRecords',saverecords);
 app.use('/initTenant',tenantlist);
 app.use('/saveTenant',savetenant);
+app.use('/initProp',initprop);
 
 
 app.get('/*',(req,res)=>{
